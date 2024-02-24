@@ -20,10 +20,11 @@ function NavBar() {
                     <li><Link to="/">Home</Link></li>
                     <li>{auth.token ? (
                         <>
-                        <span>Welcome, {Request.username}</span>
-                        <Link to="/" onClick={handleLogout}>
-                            Log Out
-                        </Link>
+                            <span>Welcome User </span>
+                            <br></br>
+                            <Link to="/" onClick={handleLogout}>
+                                Log Out
+                            </Link>
                         </>
                     ) : (
                         <Link to="/login">Login</Link>
@@ -31,7 +32,14 @@ function NavBar() {
                     </li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/signup">SignUp</Link></li>
+                    
+                    <li>{auth.token ? (
+                        <>
+                        </>
+                    ) : (
+                        <Link to="/signup">Sign Up</Link>
+                    )}
+                    </li>
                 </nav>
                 <Outlet/>
                 {/* apparently this is where I can add a footer */}
