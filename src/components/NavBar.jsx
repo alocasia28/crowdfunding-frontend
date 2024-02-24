@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import {useAuth } from "../hooks/use-auth.js";
+import LoginForm from "./LoginForm.jsx";
 import "./NavBar.css";
 
 function NavBar() {
@@ -18,9 +19,12 @@ function NavBar() {
                 <nav>
                     <li><Link to="/">Home</Link></li>
                     <li>{auth.token ? (
+                        <>
+                        <span>Welcome, {Request.username}</span>
                         <Link to="/" onClick={handleLogout}>
                             Log Out
                         </Link>
+                        </>
                     ) : (
                         <Link to="/login">Login</Link>
                     )}

@@ -8,6 +8,7 @@ export const AuthProvider = (props) => {
     // Using a object for the state here, this way we can add more properties tothe state later on like user id.
     const [auth, setAuth] =useState({
         token:window.localStorage.getItem("token"),
+        username:window.localStorage.getItem("username"),
     });
 
     return (
