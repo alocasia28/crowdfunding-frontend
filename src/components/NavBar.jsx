@@ -41,6 +41,13 @@ function NavBar() {
                         <Link to="/signup">Create an Account</Link>
                     )}
                     </li>
+                    <li>{auth.token ? (
+                        <><Link to="/create-project">Create a Project</Link>
+                        </>
+                    ) : (
+                        <></>
+                    )}
+                    </li>
                 </nav>
                 <Outlet/>
                 {/* apparently this is where I can add a footer */}
