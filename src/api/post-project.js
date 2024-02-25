@@ -16,20 +16,20 @@ async function postProject(title, description, goal, image, is_open, date_create
         "date_created": new Date().toISOString()
 
     }),
-});
-
-if (!response.ok) {
-    const fallbackError =`Could not create project`;
-    const data = await response.json().catch(() => {
-        throw new Error(fallbackError);
     });
 
-    const errorMessage = data?.detail?? fallbackError;
-    throw new Error(errorMessage);
-}
+    if (!response.ok) {
+        const fallbackError =`Could not create project`;
+        const data = await response.json().catch(() => {
+            throw new Error(fallbackError);
+        });
 
-return await response.json();
-};
+        const errorMessage = data?.detail?? fallbackError;
+        throw new Error(errorMessage);
+    }
+
+    return await response.json();
+    };
 export default postProject;
 
 
