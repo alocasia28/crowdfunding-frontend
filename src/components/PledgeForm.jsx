@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import postPledge from "../api/post-pledge";
 
@@ -9,15 +9,15 @@ function PledgeForm(props) {
     const navigate = useNavigate();
     
     const {project} = props;
-    // const {id} = useParams()
+    const {id} = useParams()
     const [pledges, setPledges] = useState({
         amount: null, 
         comment: "",
         anonymous: false,
-        project: null
+        project: id
 
     });
-
+    
     
 
     const handleChange = (event) => {
@@ -70,7 +70,7 @@ function PledgeForm(props) {
                 <label htmlFor="anonymous">Anonymous?</label>
                 <input type="checkbox" name="anonymous" id="anonymous" checked={pledges.anonymous} onChange={handleChange}/>
             </div>
-            <div>
+            {/* <div>
                 <label htmlFor="project">Project:</label>
                 <input 
                     type="number"
@@ -78,7 +78,7 @@ function PledgeForm(props) {
                     placeholder="0"
                     onChange={handleChange}
                 />   
-            </div>
+            </div> */}
             <button type="submit" onClick={handleSubmit}>Submit</button>
         </form>
     )

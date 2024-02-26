@@ -15,44 +15,38 @@ function NavBar() {
 
     return (
         <div>
-            <ul>
-                <nav>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li>{auth.token ? (
-                        <>
-                            <span>Welcome User </span>
-                            <br></br>
-                            <Link to="/" onClick={handleLogout}>
-                                Log Out
-                            </Link>
-                        </>
-                    ) : (
-                        <Link to="/login">Login</Link>
-                    )}
-                    </li>
-                    
-                    
-                    <li>{auth.token ? (
+            <nav>
+                <div className="nav-logo"> {" "}
+                    <img src="https://i.ibb.co/r7P31sz/SEEDFUNDING.jpg" alt="SEEDFUNDING logo" className="logo" />
+                </div>
+                <div className="nav-links">
+                    <Link to="/" className="nav-button">Home</Link>
+                    {auth.token ? (
                         <>
                         </>
                     ) : (
-                        <Link to="/signup">Create an Account</Link>
+                        <Link to="/signup" className="nav-button">Create an Account</Link>
                     )}
-                    </li>
-                    <li>{auth.token ? (
-                        <><Link to="/create-project">Create a Project</Link>
+                    {auth.token ? (
+                        <><Link to="/create-project" className="nav-button" >Create a Project</Link>
                         </>
                     ) : (
                         <></>
                     )}
-                    </li>
-                </nav>
-                <Outlet/>
-                {/* apparently this is where I can add a footer */}
-            </ul>
-        </div>
+                    {auth.token ? (
+                        <>
+                            <Link to="/" className="nav-button" onClick={handleLogout}>
+                                Log Out
+                            </Link>
+                        </>
+                    ) : (
+                        <Link to="/login" className="nav-button">Login</Link>
+                    )}
+                </div>
+            </nav>
+            <Outlet/>
+            <footer>this is my footer </footer>
+    </div>
     )
 }
 export default NavBar;
