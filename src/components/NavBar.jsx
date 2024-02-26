@@ -17,7 +17,7 @@ function NavBar() {
         <div>
             <nav>
                 <div className="nav-logo"> {" "}
-                    <img src="https://i.ibb.co/r7P31sz/SEEDFUNDING.jpg" alt="SEEDFUNDING logo" className="logo" />
+                    <img src="https://i.ibb.co/N7H38XP/SEEDFUNDING.png" alt="SEEDFUNDING logo" className="logo" />
                 </div>
                 <div className="nav-links">
                     <Link to="/" className="nav-button">Home</Link>
@@ -25,7 +25,7 @@ function NavBar() {
                         <>
                         </>
                     ) : (
-                        <Link to="/signup" className="nav-button">Create an Account</Link>
+                        <Link to="/signup" className="nav-button">Sign Up</Link>
                     )}
                     {auth.token ? (
                         <><Link to="/create-project" className="nav-button" >Create a Project</Link>
