@@ -25,11 +25,20 @@ function HomePage() {
                 healthier world — one garden at a time!
             </p>
         </div>
+        <h3>Our most successful projects </h3>
         <div id="project-list">
-            {projects.map((projectData, key) => {
+            {projects.sort((a,b) => b.pledges - a.pledges).slice(0,3).map((projectData, key) => {
                 return <ProjectCard key={key} projectData={projectData} />;
             })}
         </div>
+        <h3>Fund something new</h3>
+        <div id="project-list">
+            
+            {projects.sort((a,b) => new Date (b.date_created) - new Date(a.date_created)).slice(0,3).map((projectData, key) => {
+                return <ProjectCard key={key} projectData={projectData} />;
+            })}
+        </div>
+        
         </>
     );
 }

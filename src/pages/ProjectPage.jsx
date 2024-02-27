@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
 import PledgeForm from "../components/PledgeForm";
 
-import "./ProjectPage.css/"
+import "./ProjectPage.css"
 
 function ProjectPage() {
     const { id } = useParams();
@@ -29,7 +29,7 @@ function ProjectPage() {
                 <div>
                     <h3>Pledges:</h3>
                     <ul>
-                        {project.pledges.slice(0,4).map((pledgeData, key) => {
+                        {project.pledges.slice(0,4).reverse().map((pledgeData, key) => {
                             return (
                                 <li key={key}>
                                     <p>${pledgeData.amount} from {pledgeData.anonymous === true ? "anon" : pledgeData.supporter}</p>
