@@ -22,10 +22,10 @@ function PledgeForm(props) {
     
 
     const handleChange = (event) => {
-        const { id , value } = event.target;
+        const { id , value, checked } = event.target;
         setPledges((prevPledges) => ({
             ...prevPledges,
-            [id]:value,
+            [id]:id === "anonymous" ? checked : value
         }));
     };
 

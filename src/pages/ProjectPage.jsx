@@ -21,6 +21,7 @@ function ProjectPage() {
             <div className="project-div">
                 <div>
                     <h2>{project.title}</h2>
+                    <img src={project.image} />
                     <h3>{project.description}</h3>
                     <h3>Created at: {project.date_created}</h3>
                     <h3>{`Status: ${project.is_open}`}</h3>
@@ -31,7 +32,7 @@ function ProjectPage() {
                         {project.pledges.slice(0,4).map((pledgeData, key) => {
                             return (
                                 <li key={key}>
-                                    <p>${pledgeData.amount} from {pledgeData.supporter}</p>
+                                    <p>${pledgeData.amount} from {pledgeData.anonymous === true ? "anon" : pledgeData.supporter}</p>
                                     <p>{pledgeData.comment}</p>
                                 </li>
                                 // I want to limit it to the 4 most recent pledges
