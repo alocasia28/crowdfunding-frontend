@@ -24,7 +24,7 @@ function ProjectPage() {
                     <img src={project.image} />
                     <h3>{project.description}</h3>
                     <h3>Created at: {project.date_created}</h3>
-                    <h3>{`Status: ${project.is_open}`}</h3>
+                    <h3>{project.is_open === true ? "Accepting donations" : "This project is closed"}</h3>
                 </div>
                 <div>
                     <h3>Pledges:</h3>

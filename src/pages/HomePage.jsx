@@ -26,11 +26,13 @@ function HomePage() {
             </p>
         </div>
         <h3>Our most successful projects </h3>
+        {/* returns most funded projects */}
         <div id="project-list">
-            {projects.sort((a,b) => b.pledges - a.pledges).slice(0,3).map((projectData, key) => {
+            {projects.sort((a,b) => b.total - a.total).slice(0,3).map((projectData, key) => {
                 return <ProjectCard key={key} projectData={projectData} />;
             })}
         </div>
+        {/* returns newest projects */}
         <h3>Fund something new</h3>
         <div id="project-list">
             

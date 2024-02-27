@@ -15,6 +15,8 @@ function ProjectCard(props) {
             <Link to={projectLink}>
                 <img src={projectData.image} />
                 <h3>{projectData.title}</h3>
+                <h4>{projectData.owner}</h4>
+                <p> ${projectData.total} raised</p>
                 <p>{calculatePercentage(projectData.total, projectData.goal)}% Funded</p>
                 {/* <p> ${projectData.total} of ${projectData.goal} Funded</p>  */}
                 {/* {make it a function that's a .js file and then import here. It should take two arguments, goal and total 
