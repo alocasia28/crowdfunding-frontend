@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import postPledge from "../api/post-pledge";
 
+import "./Form.css";
 
 function PledgeForm(props) {
 
@@ -41,13 +42,14 @@ function PledgeForm(props) {
                 authToken
             ).then((response) => {
                 console.log(response);
-                navigate("/");
+                window.location.reload();
             });
         }
     };
 
     return (
-        <form>
+
+        <form className="pledge-form">
             <div>
                 <label htmlFor="amount">Amount:</label>
                 <input 
@@ -68,7 +70,7 @@ function PledgeForm(props) {
             </div>
             <div>
                 <label htmlFor="anonymous">Anonymous?</label>
-                <input type="checkbox" name="anonymous" id="anonymous" checked={pledges.anonymous} onChange={handleChange}/>
+                <input type="checkbox" name="anonymous" id="anonymous" value={pledges.anonymous} onChange={handleChange}/>
             </div>
             {/* <div>
                 <label htmlFor="project">Project:</label>

@@ -1,0 +1,8 @@
+.project-div {
+    display: grid;
+    grid-template-columns: 60% 20% 10%;
+    grid-template-rows: 20%  ;
+    gap: 10px;
+    
+
+}

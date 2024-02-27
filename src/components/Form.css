@@ -1,0 +1,18 @@
+form {
+    /* border: 1px solid red; */
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pledge-form{ 
+    /* background-color:rgba(163, 178, 178, 0.654); */
+    border: 2px green dashed;
+
+}
+
+button {
+    width: 80%;
+    background-color: darkslategray;
+}
