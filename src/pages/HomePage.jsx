@@ -17,7 +17,7 @@ function HomePage() {
 
     return (
         <>
-        <div id="about-section">
+        <div id="text">
             <p>Welcome to SproutSeeds - where edible garden dreams come true!
                 Our crowdfunding platform links aspiring gardeners with a supportive community, 
                 helping you kickstart your own fresh haven. Share your vision, set achievable goals, 
@@ -25,7 +25,7 @@ function HomePage() {
                 healthier world — one garden at a time!
             </p>
         </div>
-        <h3>Our most successful projects </h3>
+        <h3 id="text">OUR MOST SUCCESSFUL PROJECTS </h3>
         {/* returns most funded projects */}
         <div id="project-list">
             {projects.sort((a,b) => b.total - a.total).slice(0,3).map((projectData, key) => {
@@ -33,7 +33,7 @@ function HomePage() {
             })}
         </div>
         {/* returns newest projects */}
-        <h3>Fund something new</h3>
+        <h3 id="text">FUND SOMETHING NEW</h3>
         <div id="project-list">
             
             {projects.sort((a,b) => new Date (b.date_created) - new Date(a.date_created)).slice(0,3).map((projectData, key) => {
