@@ -37,7 +37,7 @@ function ProjectForm() {
                 authToken
             ).then((response) => {
                 console.log(response);
-                navigate("/");
+                navigate(`/project/${response.id}`);
             });
         }
     };
