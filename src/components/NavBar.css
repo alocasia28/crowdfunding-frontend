@@ -4,12 +4,10 @@ ul {
 }
 nav { 
     display: flex;
-    justify-content:space-around;
-    width: 90%;
+    justify-content: center; 
     align-items: center;
-    /* padding-left: 30px;
-    padding-right: 30px; */
-    /* margin: auto; */
+    width: 100%; 
+    padding: 0 30px; 
 }
 
 img {
@@ -29,4 +27,23 @@ img {
 .nav-button:hover {
     color: rgb(137, 173, 137);
     /* padding: 2px; */
+}
+
+footer {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 20px; /* Add some space at the top */
+}
+
+@media screen and (max-width: 634px) {
+    img {
+        height: 100px;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: space-evenly;
+        width: 200px;
+    }
+    
 }

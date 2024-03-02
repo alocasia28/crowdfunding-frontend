@@ -45,7 +45,7 @@ function NavBar() {
                 </div>
             </nav>
             <Outlet/>
-            <footer>this is my footer </footer>
+            <footer>Alisha Sharaballi | She Codes 2024 </footer>
     </div>
     )
 }
