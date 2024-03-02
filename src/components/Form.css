@@ -1,18 +1,44 @@
 form {
-    /* border: 1px solid red; */
     width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center the items vertically */
     justify-content: center;
+    /* border: 1px solid red; */
 }
 
-.pledge-form{ 
-    /* background-color:rgba(163, 178, 178, 0.654); */
+.pledge-form {
     border: 2px green dashed;
-
+    padding: 20px;
 }
 
 button {
     width: 80%;
-    background-color: darkslategray;
+    margin-top: 20px; 
+    background-color: rgb(201, 211, 201);
+    color: white; /* Set text color to white */
+    border: none;
+    padding: 10px; /* Add padding to the button */
+    cursor: pointer;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    /* border: #10634b 1px solid; */
+    /* padding: 20px; */
+    border-radius: 10px;
+    width: 100%;
+    color: var(--white);
+}
+input {
+    width: 100%; /* Set the input fields to take up 100% width */
+    padding: 10px; /* Add padding to the input fields */
+    margin-bottom: 10px; /* Add margin between the input fields */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+button:hover {
+    background-color: #333; 
 }

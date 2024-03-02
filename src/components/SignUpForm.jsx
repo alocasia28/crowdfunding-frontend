@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import postUser from "../api/post-user";
 
+import "./Form.css";
+
 // import useauth maybe?
 function SignUpForm() {
     const navigate = useNavigate();
@@ -37,7 +39,7 @@ function SignUpForm() {
 
     return (
         <form>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="email_address">Email:</label>
                 <input 
                     type="text"
@@ -46,7 +48,7 @@ function SignUpForm() {
                     onChange={handleChange}
                 />      
             </div>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="username">Username:</label>
                 <input 
                     type="text"
@@ -55,7 +57,7 @@ function SignUpForm() {
                     onChange={handleChange}
                 />      
             </div>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="password">Password:</label>
                 <input 
                     type="password"

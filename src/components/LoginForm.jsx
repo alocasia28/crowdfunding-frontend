@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import postLogin from "../api/post-login";
 import {useAuth} from "../hooks/use-auth.js";
 
+import "./Form.css";
+
 function LoginForm() {
     const navigate = useNavigate();
     const {auth, setAuth} = useAuth();
@@ -39,7 +41,7 @@ function LoginForm() {
 
     return (
     <form>
-        <div>
+        <div className="form-fields">
             <label htmlFor="username">Username:</label>
             <input 
                 type="text"
@@ -48,7 +50,7 @@ function LoginForm() {
                 onChange={handleChange}
             />      
         </div>
-        <div>
+        <div className="form-fields">
             <label htmlFor="password">Password:</label>
             <input 
                 type="password"

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import postProject from "../api/post-project";
 
+import "./Form.css";
+
 function ProjectForm() {
     const [project, setProject] = useState({
         title: "",
@@ -45,23 +47,23 @@ function ProjectForm() {
 
     return (
         <form>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="title">Title:</label>
                 <input type="text" id="title" placeholder="Enter a title" onChange={handleChange} />
             </div>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="description">Description:</label>
                 <input type="text" id="description" placeholder="What is your project about?" onChange={handleChange} />
             </div>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="goal">Funding Goal:</label>
                 <input type="number" id="goal" placeholder="How much do you want to raise?" onChange={handleChange}  />
             </div>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="image">Image URL</label>
                 <input type="url" name="image" id="image" placeholder="https://example.com" onChange={handleChange} />
             </div>
-            <div>
+            <div className="form-fields">
                 <label htmlFor="is_open">Active:</label>
                 <input type="checkbox" name="is_open" id="is_open" checked={project.is_open} onChange={handleChange}/>
             </div>
