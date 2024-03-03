@@ -46,7 +46,7 @@ function ProjectPage() {
                 </div>
                 
             </div>
-            <PledgeForm/>
+            {project.is_open && <PledgeForm/>}
         </>
     );
 }

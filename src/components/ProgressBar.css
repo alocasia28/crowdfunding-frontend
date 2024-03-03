@@ -1,0 +1,19 @@
+progress[value] {
+    -webkit-appearance:none;
+    -moz-appearance:none;        
+    appearance: none;
+    border: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: grey;
+  /* border-radius: 20px; */
+}
+progress[value]::-webkit-progress-value {
+  background: rgb(225, 177, 47);
+  /* border-radius: 20px; */
+}
+progress[value]::-moz-progress-bar {
+  background: rgb(47, 97, 225);
+  /* border-radius: 20px; */
+}

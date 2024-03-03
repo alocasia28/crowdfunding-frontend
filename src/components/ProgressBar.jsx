@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./ProgressBar.css/"
 // should this be a let or a const
 export let ProgressBar = ({currentValue, maxValue}) => 
     <progress value={currentValue} max={maxValue}>{currentValue}%</progress>;
