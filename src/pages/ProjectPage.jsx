@@ -21,17 +21,18 @@ function ProjectPage() {
         <>
             <div className="project-div">
                 <div>
-                    <h2>{project.title}</h2>
-                    <h4>{project.owner}</h4>
+                    <h2 id="title" className="project-text">{project.title}</h2>
+                    
                     <img src={project.image} />
-                    <h3>{project.description}</h3>
-                    <h3>Created at: {project.date_created}</h3>
-                    <h3>{project.is_open === true ? "Accepting donations" : "This project is closed"}</h3>
+                    <h3 className="project-text">{project.description}</h3 >
+                    <h3 id="sub-title" className="project-text">{project.owner}</h3>
+                    <h3 id="sub-title" className="project-text">Created: {new Date(project.date_created).toLocaleDateString()}</h3>
                 </div>
                 <div>
+                    <h3 className="project-text">{project.is_open === true ? "Accepting donations" : "This project is closed"}</h3>
                     <p> ${project.total === null ? "0" : project.total} raised</p>
                     <ProgressBar currentValue={project.total} maxValue={project.goal}/>
-                    <h3>Pledges:</h3>
+                    <h3 className="project-text">Pledges:</h3>
                     <ul>
                         {project.pledges.slice(0,4).reverse().map((pledgeData, key) => {
                             return (
