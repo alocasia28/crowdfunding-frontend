@@ -42,3 +42,7 @@ input {
 button:hover {
     background-color: #333; 
 }
+
+.error-message {
+    color: red;
+}

@@ -2,18 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import postLogin from "../api/post-login";
-import {useAuth} from "../hooks/use-auth.js";
+import { useAuth } from "../hooks/use-auth.js";
 
 import "./Form.css";
 
 function LoginForm() {
     const navigate = useNavigate();
-    const {auth, setAuth} = useAuth();
+    const { auth, setAuth } = useAuth();
 
     const [credentials, setCredentials] = useState({
-        username:"",
-        password:"",
+        username: "",
+        password: "",
     });
+    const [error, setError] = useState("");
 
     const handleChange = (event) => {
         const { id, value } = event.target;
@@ -26,43 +27,45 @@ function LoginForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (credentials.username && credentials.password) {
-            postLogin(
-                credentials.username, 
-                credentials.password
-            ).then((response) => {
-                window.localStorage.setItem("token",response.token);
-                setAuth({
-                    token: response.token,
+            postLogin(credentials.username, credentials.password)
+                .then((response) => {
+                    window.localStorage.setItem("token", response.token);
+                    setAuth({
+                        token: response.token,
+                    });
+                    navigate("/");
+                })
+                .catch((error) => {
+                    setError("Invalid credentials. Please try again.");
                 });
-                navigate("/");
-            });
         }
     };
 
     return (
-    <form>
-        <div className="form-fields">
-            <label htmlFor="username">Username:</label>
-            <input 
-                type="text"
-                id="username" 
-                placeholder="Enter username"
-                onChange={handleChange}
-            />      
-        </div>
-        <div className="form-fields">
-            <label htmlFor="password">Password:</label>
-            <input 
-                type="password"
-                id="password" 
-                placeholder="Password"
-                onChange={handleChange} 
+        <form>
+            <div className="form-fields">
+                <label htmlFor="username">Username:</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    onChange={handleChange}
                 />
-        </div>
-        <button type="submit" onClick={handleSubmit}>
-            Login
-        </button>  
-    </form>  
+            </div>
+            <div className="form-fields">
+                <label htmlFor="password">Password:</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                />
+            </div>
+            {error && <p className="error-message">{error}</p>}
+            <button type="submit" onClick={handleSubmit}>
+                Login
+            </button>
+        </form>
     );
 }
 
