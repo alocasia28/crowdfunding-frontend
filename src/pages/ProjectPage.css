@@ -27,6 +27,22 @@
     font-size: 16px;
 }
 
+ul {
+    padding-left: 0;
+}
+
+li {
+    /* border: 1px solid black; */
+    padding: 0;
+    margin: 10px;
+    justify-content: center;
+}
+
+.pledge-container {
+    padding: 5px;
+    background-color: rgb(210, 172, 96);
+    border-radius: 5px;
+}
 @media screen and (max-width: 682px) {
     #project-div {
         grid-template-columns: 100%; /* Change to one column for small screens */

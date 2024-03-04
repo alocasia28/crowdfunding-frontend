@@ -30,8 +30,10 @@ function LoginForm() {
             postLogin(credentials.username, credentials.password)
                 .then((response) => {
                     window.localStorage.setItem("token", response.token);
+                    window.localStorage.setItem("username", response.username);
                     setAuth({
                         token: response.token,
+                        username: response.username
                     });
                     navigate("/");
                 })

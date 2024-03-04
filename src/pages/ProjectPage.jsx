@@ -9,6 +9,8 @@ function ProjectPage() {
     const { id } = useParams();
     const { project, isLoading, error} = useProject(id);
 
+    
+
     if (isLoading) {
         return (<p>loading...</p>)
     }
@@ -37,8 +39,11 @@ function ProjectPage() {
                         {project.pledges.slice(0,4).reverse().map((pledgeData, key) => {
                             return (
                                 <li key={key}>
-                                    <p>${pledgeData.amount} - {pledgeData.anonymous === true ? "Anonymous" : pledgeData.supporter}</p>
-                                    <p>{pledgeData.comment}</p>
+                                    <div className="pledge-container">
+                                        <div>{pledgeData.anonymous === true ? "Anonymous" : pledgeData.supporter}</div>
+                                        <div>${pledgeData.amount}</div>
+                                        <div>{pledgeData.comment}</div>
+                                    </div>
                                 </li>
                                 // I want to limit it to the 4 most recent pledges
                             );
@@ -47,6 +52,7 @@ function ProjectPage() {
                 </div>
                 
             </div>
+            
             {project.is_open && <PledgeForm/>}
         </>
     );

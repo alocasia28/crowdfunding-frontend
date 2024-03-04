@@ -9,6 +9,7 @@ function PledgeForm(props) {
 
     const navigate = useNavigate();
     
+    
     const {project} = props;
     const {id} = useParams()
     const [pledges, setPledges] = useState({
@@ -18,6 +19,7 @@ function PledgeForm(props) {
         project: id
 
     });
+    const authToken = window.localStorage.getItem("token");
     
     
 
@@ -32,7 +34,7 @@ function PledgeForm(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const authToken = window.localStorage.getItem("token");
+        // const authToken = window.localStorage.getItem("token");
         if (authToken) {
             postPledge(
                 pledges.amount,
@@ -50,6 +52,7 @@ function PledgeForm(props) {
     return (
 
         <form className="pledge-form">
+            {!authToken && <p>You are not logged in. Please log in to submit a pledge</p>}
             <div>
                 <label htmlFor="amount">Amount:</label>
                 <input 
@@ -57,6 +60,8 @@ function PledgeForm(props) {
                     id="amount" 
                     placeholder="10"
                     onChange={handleChange}
+                    required
+                    min={1}
                 />   
             </div>
             <div>

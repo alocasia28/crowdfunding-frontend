@@ -5,7 +5,8 @@ import "./HomePage.css";
 
 function HomePage() {
     const { projects, isLoading, error } = useProjects();
-
+    
+    // const user = localStorage.getItem("username") need to change this to useEffect
     
     if (isLoading) {
         return (<p>loading...</p>)
@@ -18,6 +19,7 @@ function HomePage() {
     return (
         <>
         <div id="text">
+            {/* <p>Hi {user}! </p> */}
             <p>Welcome to SproutSeeds - where edible garden dreams come true!
                 Our crowdfunding platform links aspiring gardeners with a supportive community, 
                 helping you kickstart your own fresh haven. Share your vision, set achievable goals, 
