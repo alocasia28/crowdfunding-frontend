@@ -20,7 +20,7 @@ function HomePage() {
         <>
         <div id="text">
             {/* <p>Hi {user}! </p> */}
-            <p>Welcome to SproutSeeds - where edible garden dreams come true!
+            <p>Welcome to SeedFunding - where edible garden dreams come true!
                 Our crowdfunding platform links aspiring gardeners with a supportive community, 
                 helping you kickstart your own fresh haven. Share your vision, set achievable goals, 
                 and engage with fellow enthusiasts. Join us in cultivating a greener, 

@@ -19,12 +19,20 @@ function ProjectPage() {
         return (<p>{error.message}</p>)
     }
 
+    const projOwner = project.owner
+    const authUser = localStorage.getItem("username")
+    const isOwner = (projOwner === authUser)
+
+    console.log(isOwner)
+
     return (
         <>
             <div className="project-div">
                 <div>
                     <h2 id="title" className="project-text">{project.title}</h2>
-                    
+                    <section>
+                        {isOwner? <a href="">Update</a> : ""}
+                    </section>
                     <img src={project.image} />
                     <h3 className="project-text">{project.description}</h3 >
                     <h3 id="sub-title" className="project-text">{project.owner}</h3>
