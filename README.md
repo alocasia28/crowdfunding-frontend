@@ -1,5 +1,5 @@
 # CROWDFUNDING BACK END
-View the deployed site at: https://crowdfunding-back-end18472.fly.dev/projects/
+View the deployed site at: https://seedfunding.netlify.app/
 
 ## Planning:
 ### SproutSeeds
